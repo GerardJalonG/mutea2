@@ -3,6 +3,8 @@ from discord.ext import commands
 import os
 from dotenv import load_dotenv
 from datetime import datetime, timezone
+import threading
+from flask import Flask
 
 import database as db
 
@@ -10,6 +12,19 @@ load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
 if not TOKEN:
     raise RuntimeError("Coloca DISCORD_TOKEN en .env")
+
+# Flask para puerto dummy
+app = Flask("")
+
+@app.route("/")
+def home():
+    return "Bot activo"
+
+def run():
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+
+threading.Thread(target=run).start()
+
 
 intents = discord.Intents.default()
 intents.guilds = True
