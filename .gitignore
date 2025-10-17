@@ -1,0 +1,4 @@
+/.env
+/venv
+/voice_times.db
+/__pycache__
