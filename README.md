@@ -39,7 +39,7 @@ Mutea2 es un bot de Discord que automáticamente rastrea y registra el tiempo qu
    
    Crea un archivo `.env` en la raíz del proyecto con el siguiente contenido:
    ```env
-   DISCORD_TOKEN=tu_token_aqui
+   DISCORD_TOKEN=tu_token_aquí
    ```
 
 4. **Ejecuta el bot**
